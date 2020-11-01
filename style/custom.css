@@ -10,8 +10,13 @@ body {
   background-size: cover;
   background-repeat: no-repeat;
 }
-.navbar {
-  
+
+.navbar{
+  background-color: transparent !important; 
+}
+
+h1{
+  width: 100px;
 }
 .title {
   margin: 90px 90px;
@@ -22,8 +27,12 @@ body {
   color: #fff;
   font-family: Arial, Helvetica, sans-serif;
 }
+img{
+  width: 50px;
+}
+
 .item{
-  color: white;
+  color: white !important;
   
 }
 .para {
@@ -40,6 +49,12 @@ body {
   left: 100px;
 }
 
+.center {
+  margin: 100px;
+  position: relative;
+  top: 200px;
+  left: 600px;
+}
 
 /*.item{
   color: white;
