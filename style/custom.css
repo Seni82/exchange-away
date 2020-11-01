@@ -1,46 +1,78 @@
-* {
+ {
   margin:0; padding: 0;
   box-sizing: border-box; -moz-box-sizing: border-box;
   outline: 0;
- 
-}
+  
+ } 
 
 body {
   background-image: url(../assets/images/front-page-background.png);
-  background-size: cover;
+  background-size: 1950px 550px;
   background-repeat: no-repeat;
 }
-.navbar {
-  
-}
-.title {
-  margin: 90px 90px;
-  font-size: 150px;
+.welcome {
   position: relative;
-  top: 100px;
+  top:100px;
+  font-size: 20px;
+  display:flex;
+}
+.title{
+  margin: 90px 90px;
+  font-size: 90px;
+  position: relative;
+  top: 20px;
   display: flex;
   color: #fff;
   font-family: Arial, Helvetica, sans-serif;
 }
 .item{
-  color: white;
-  
+  color: white; 
 }
+
+body div h2 span{
+  color: orange;
+}
+
+
 .para {
   margin: 96px;
   font-family: 'Raleway', sans-serif;
   color: white;
   font-weight: 700;
-  font-size: 30px;
+  font-size: 20px;
+  position: relative;
+  top: -90px;
 }
 
 .btn {
-  position: relative;
-  top: 20px;
   left: 100px;
+  width: 150px;
+  font-size: smaller;
+  position: relative;
+  
 }
 
+.selection {
+  width: 45px;
+  margin-bottom: 50px;
+  align-self: center;
+}
 
+#curConverterBtn{
+  top: -50px;
+  background-color: orange;
+  border-radius: 15px;
+}
+
+#liveWeatherBtn{
+  top: -50px;
+   border: 0.1px white;
+   border-radius: 15px;
+}
+
+input {
+  border-radius: 25px;
+}
 /*.item{
   color: white;
   margin-right: 20px;
@@ -63,3 +95,12 @@ body {
 }
 */
 
+h2 {
+  position: relative;
+  top: 150px;
+}
+
+h5 {
+  position: relative;
+  top: 150px;
+}
