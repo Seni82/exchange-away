@@ -3,7 +3,9 @@
   box-sizing: border-box; -moz-box-sizing: border-box;
   outline: 0;
   
- 
+}
+body {
+  
 }
 
 
@@ -31,8 +33,9 @@ header {
   padding: 100px;
 }
 
+
 #weather-section {
-  background-image: url(../assets/images/weatherBackground.png);
+  
   background-size: cover;
   background-position: center;
   height: 100vh;
@@ -45,8 +48,22 @@ header {
   
 }
 
-#input {
+.box{
+  background-color: white;
+  border-radius: 30px;
+  align-items: center;
+  padding: 10px;
 }
+
+.box > i{
+  font-size: 14px;
+  color:#777;
+  cursor: pointer;
+}
+
+
+
+
 
 
 
@@ -151,28 +168,137 @@ i.home .icon{
   margin: 100px!important;
 }
 
-.logo {
-  position: relative;
-  left: 19px;
-  width: 80px;
-  display: block;
-  line-height: 70px!important;
-
-  
+.containe{
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
 }
 
+.cardd{
+  position: relative;
+  width: 500px;
+  height: 530px;
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 5px 15px 1px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  top: -1100px;
+}
+
+.cardd:before{
+ content: '';
+ position: absolute;
+ width:100%;
+ height: 270px;
+ top: 0;
+ left: 0;
+ background-image: linear-gradient(to top, #00f2fe, #4facfe);
+ clip-path: circle(400px at 50% -48.5%)
+}
+.headerr{
+  position: relative;
+  height: 265px;
+}
+.mainn{
+  position: relative;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.conten{
+  display: flex;
+  padding: 1.7rem 2.5rem 2.6rem 2.5rem;
+}
+
+.rightt{
+  display: flex;
+  flex-direction: column;
+  text-align: right;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin-left: 10.1rem;
+}
+
+.number{
+  font-size: 2.1rem;
+  font-family: 'Playfair Display', serif;
+  font-weight: 200;
+  color: #333;
+  line-height: 1.2;
+}
+
+.number-title{
+  font-size: .55rem;
+  color: #666;
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.temp{
+  color:#555;
+  font-family: 'Playfair Display', serif;
+  font-weight: 500;
+  font-size: 4.1rem;
+  padding: 0 0 3px 0;
+  position: relative;
+  left: 50px;
+}
 .fixed{
   padding-right: 8%!important;
   padding-left: 8%!important;
 }
 
-#main-weather{
-  background-image: url(../assets/images/weather-background-01.png);
-  background-size: cover;
-  min-width: 800px;
-  background-repeat: no-repeat;
-  padding: 100vh;
-  width: max-content;
+.search {
+  width: 100%;
+  position: relative;
+  display: flex;
+}
+
+.searchTerm {
+  width: 100%;
+  border: 3px solid #00B4CC;
+  border-right: none;
+  padding: 5px;
+  height: 20px;
+  border-radius: 5px 0 0 5px;
+  outline: none;
+  color: #9DBFAF;
+  height: 36px;
+}
+
+.searchTerm:focus{
+  color: #00B4CC;
+}
+
+.searchButton {
+  width: 40px;
+  height: 36px;
+  border: 1px solid #00B4CC;
+  background: #00B4CC;
+  text-align: center;
+  color: #fff;
+  border-radius: 0 5px 5px 0;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+/*Resize the wrap to see the search bar change!*/
+.wrap{
+  width: 30%;
+  position: absolute;
+ 
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 /*.item{
@@ -202,93 +328,33 @@ change background
 
 672px remove menu and logo and show hamburger menu*/
 
-@media (max-width: 768px) {
- 
-  
-  .title{
-    top:200px;
-    font-size: 80px!important;
-    position: relative;
-    left:100px;
+
+
+@media (max-width: 798px) {
+  .secondary.pointing.menu .item,
+  .secondary.pointing.menu .menu {
+    display: none;
   }
-
-  .welcome{
-    position: relative;
-    top:200px;
-    left: 100px;
-    font-size: 30px!important;
+  .secondary.pointing.menu .toc.item {
+    display: block;
   }
+}
 
-  .slogan {
-    top:200px;
-    position: relative;
-    left:-120px
-  }
-
-  .btn{
-    position: relative;
-    left: -90px;
-  }
-
-  #curConverterBtn{
-    top: 200px;
-
-  }
-
-  #liveWeatherBtn{
-    top: 200px;
-  }
-
-  .logo{
+@media (min-width: 798px) {
+  .secondary.pointing.menu .toc.item {
     display: none;
   }
 
-  .ui.fixed.menu{
-    display: none!important;
-  }
-  
-}
-
-.marginlefting {
-  margin-left: 60px !important;
-}
-
-.displaynone {
-  display: none !important;
-}
-
-.displayblock {
-  display: block !important;
-}
-
-.sidebar .item i {
-  font-size: 24px;
-  margin-top: -5px !important;
-}
-
-.logo {
-  height: 48px !important;
-  padding: 10px !important;
-}
-
-.logo img {
-  width: 100% !important;
-  height: 38px !important;
-}
-
-.title.item {
-  padding: .92857143em 1.14285714em !important;
-}
-
-.dropdown .menu .header {
-  padding-top: 3.9px!important;
-  padding-bottom: 3.9px!important;
-}
-
-@media (max-width: 768px){
-  /*tablet*/
 }
 
 @media (max-width: 375px){
   /*smaller phone*/
+}
+
+
+@media only screen and (max-width: 700px){
+
+.secondary.pointing.menu .toc.item {
+    display: block;
+}
 }
