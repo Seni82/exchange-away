@@ -55,6 +55,7 @@ $("#searchBtn").click(function(event) {
 async function currency(){
 
        const res = await fetch(API_URL);
+       console.log(res);
        const data = await res.json();
       // console.log(data.rates);
        const arrKeys = Object.keys(data.rates);
