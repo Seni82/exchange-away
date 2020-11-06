@@ -28,9 +28,7 @@ header {
   
 }
 
-.text{
-  margin-top: 200px;
-}
+
 
 .ui.weather {
   font-family: Georgia, 'Times New Roman', Times, serif;
@@ -66,6 +64,9 @@ header {
 }
 
 
+.menu .item{
+  color: black !important;
+}
 
 
 
@@ -150,7 +151,7 @@ body div h2 span{
   border-radius: 15px;
 }
 #liveWeatherBtn{
-  top: -50px;
+   top: -50px;
    border: 0.1px white;
    border-radius: 15px;
 }
@@ -158,23 +159,34 @@ body div h2 span{
 input {
   border-radius: 25px;
 }
-/*
-Moved to allign to the middle section of the page Rk
-*/
 
 h4 {
   font-size: 36px;
   font-style: inherit;
   text-align: center;
-  
 }
 
-.currencyTitle{
+.currencyTitle {
   font-family: 'Open Sans', sans-serif!important;
   font-size: 50px!important;
   text-transform: uppercase!important;
-  font-weight: 700!important;
-  color: lightgray!important;
+  color: #868a8f!important;
+}
+
+.weatherTitle{
+  font-family: 'Open Sans', sans-serif!important;
+  font-size: 50px!important;
+  text-transform: uppercase!important;
+  color: #868a8f!important;
+}
+
+
+#currentDayForCurrency{
+  text-align: center;
+  margin: 30px;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 800;
 }
 
 #center-currency{
@@ -185,9 +197,6 @@ h4 {
   bottom: 10px ;
   
 }
-
-
-
 
 #liveWeatherBtn{
   top: 70px;
@@ -200,9 +209,9 @@ input {
   border-radius: 25px;
 }
 .weatherBackground{
-
-  background-color:#B1AFD1;
-  background-image: url(./assets/images/greece-01.png);
+ background-image: url(../assets/images/weather-bg.jpg);
+ background-repeat: no-repeat;
+ background-size: cover;
 }
 
 i.home .icon{
@@ -237,14 +246,14 @@ i.home .icon{
 }
 
 .searchTerm:focus{
-  color: #00B4CC;
+  color: #5E5BA5;
 }
 
 .searchButton {
   width: 40px;
   height: 36px;
-  border: 1px solid #00B4CC;
-  background: #00B4CC;
+  border: 1px solid #5E5BA5;
+  background: #5E5BA5;
   text-align: center;
   color: #fff;
   border-radius: 0 5px 5px 0;
@@ -252,7 +261,36 @@ i.home .icon{
   font-size: 20px;
 }
 
-/*Resize the wrap to see the search bar change!*/
+.ui.segment.weather{
+  height: 220px;
+  transition: 0.3s ease-in-out;
+}
+
+.ui.segment.weather:hover{
+   height: 520px;
+}
+
+.ui.segment.weather .weatherInfo{
+  position: relative;
+  margin-top: -150px;
+  padding: 10px 15px;
+  visibility: hidden;
+  opacity: 0;
+  transition: 0.3s ease-in-out;
+}
+
+.ui.segment.weather:hover .weatherInfo{
+  visibility: visible;
+  opacity: 1;
+  margin-top: 10px;
+  
+}
+
+.ui.segment.weather:hover .hideText{
+  display: none;
+  opacity: 0;
+}
+
 .wrap{
   width: 30%;
   position: absolute;
@@ -261,25 +299,10 @@ i.home .icon{
   transform: translate(-50%, -50%);
 }
 
-/*.item{
-  color: white;
-  margin-right: 20px;
-  padding: 0px 10px;
-  word-wrap: normal;
-  position: relative;
-  left: 1350px;
-  top: 25px;
+.location{
+  font-family: sans-serif;
+  font-size: 4rem;
 }
-/*
-.logo{
-  margin-top: 30px;
-  width: 100px;
-  height: 100px;
-  margin-left: 50px;
-  border: 2px solid purple;
-  display: inline-block;
-}
-*/
 
 .currencyBackground{
   background-color: lightgray;
@@ -312,11 +335,25 @@ i.home .icon{
   width: 200px;
 }
 
+.ui .search .selection .dropdown{
+  width: 200px;
+}
+
 #currBg{
- background-image: url(../assets/images/ffinalBGsecond-01.png);
+ background-image: url(../assets/images/backgroundTwo.jpg);
  background-size: cover;
- 
+ background-attachment: fixed;
   
+}
+
+
+
+.customHeightDropdown{
+  height: 25px;
+}
+.countryHeightDropdown{
+  position: relative;
+  top: 50px;
 }
 
 .box{
@@ -325,11 +362,11 @@ i.home .icon{
   left:50%;
   transform: translate(-50%, -50%);
   width: 200px;
-  height: 80px;
+  height: 75px;
   background: #111845a6;
   box-sizing: border-box;
   overflow: hidden;
-  box-shadow: 0 20px 50px rgb(23, 32, 90);
+  box-shadow: 0 7px 30px rgb(23, 32, 90);
   border: 2px solid #2a3cad;
   color: white;
   padding: 20px;
@@ -383,18 +420,17 @@ i.home .icon{
   height: 530px;
 }
 
-
-
-.ui.grid .ui.card .imgBx{
-  position: relative;
-  width: 260px;
-  height: 260px;
-  top: -60px;
-  left: 45px;
+.dateSize{
+  font-size: 15px!important;
   
-  z-index: 1;
-  box-shadow: 1 5px 20px rgba(0,0,0,0.2);
 }
+
+.location{
+  font-size: 40px;
+  text-transform: uppercase;
+  color: gray;
+}
+
 
 .ui.grid.weather .ui.card .imgBx img{
   max-width: 100%;
@@ -477,6 +513,10 @@ i.home .icon{
 
 .search .icon{
   cursor: pointer;
+}
+
+.country{
+  color: black!important;
 }
 
 

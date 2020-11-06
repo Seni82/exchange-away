@@ -4,8 +4,6 @@
   <meta charset="UTF-8">
   <meta name="author" content="Rekha Kumari" />
   <meta name="author" content="Sumaya Hassan" />
-  <meta name="author" content="Imran Khan" />
-  <meta name="author" content="Ola Isola" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
   <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&display=swap" rel="stylesheet">
@@ -26,28 +24,9 @@
   <link rel="stylesheet" type="text/css" href="assets/dist/components/search.css">
   
   
-  <script src="assets/library/jquery.min.js"></script>
-  <script src="assets/dist/components/dropdown.js"></script>
-  <script src="assets/dist/components/transition.js"></script>
-  <script src="assets/dist/components/sidebar.js"></script>
-  <script src="assets/dist/components/sidebar.min.js"></script>
-  <script src="assets/dist/components/search.js"></script>
-  <script type="text/javascript" src="script.js"></script>
-  <script>
-    $(document)
-      .ready(function() {
-
-        $('.ui.sidebar')
-        .sidebar('attach events', '.toc.item');
-
-        $('.ui.dropdown').dropdown();
   
-        $('.ui.buttons .dropdown.button').dropdown({
-          action: 'combo'
-        });
-      })
-    ;
-    </script>
+  
+  
 
   <!--Add favicon-->
   <link rel="icon" type="image/jpg" href="./assets/images/smaller-logo-01.png"/> 
@@ -62,12 +41,7 @@
   
     <!-- Site content !-->
   <header id="main">
-   <!--Sidebar Menu
-   <div class="ui sidebar menu large compact inverted container icon labeled vertical thin">
-    <a href="#home" class="active item"><i class="global icon"></i>Home</a>
-    <a href="#" class="item"><i class="coffee icon"></i>Currency Converter</a>
-    <a href="#" class="item"><i class="global icon"></i>Weather Dashboard</a>
-  </div>-->
+   
   <!--main content-->
   <div class="pushable">
   <div class="ui vertical aligned center segment landing inverted" id="menu">
@@ -102,8 +76,8 @@
   <div class="ui container">
       <div class="ui two column grid padded">
         <div class="row text">
-          <div class="colum">
-            <h4 class="ui align center" style="font-size: 30px; color: white;">WELCOME TO</h4>
+          <div class="colum" style="margin-top: 60px;">
+            <h4 class="ui" style="font-size: 30px; color: white; margin-right: 200px;">WELCOME TO</h4>
             <h2 class="ui center aligned header" style="color: white; font-size: 90px;">EX <span class="ui orange">AWAY</span></h2>
             <p class="ui header" style="color: white;">BEST WAY TO EXCHANGE</p>
           </div>
@@ -120,10 +94,15 @@
         </div>   
     </div>
   </header>
+  
   <main id="currBg">
 
-  <div id="currency" class="ui container" style="margin-top:100px;">
+  <div id="currency" class="ui container currencyContent" style="height:800px;">
     <div>
+      <br>
+      <br>
+      <br>
+      <br>
       <h1 class="ui center aligned header currencyTitle">Currency Converter</h1>
     </div>
     
@@ -135,86 +114,87 @@
             <div class="row">
               <!--Row 1 Column 1 dropdown-->
              <div class="eight wide column">
-               <div class="ui search selection dropdown">
-                <input type="hidden" name="country1">
+             
+               <div id="countryOne" class="ui search selection dropdown">
+                <input class="currencyVal" type="hidden" name="country1">
                 <i class="dropdown icon"></i>
                 <div class="default text">Select Country</div>
                 <div class="menu">	
-                <div class="item" data-value="au"><i class="au flag"></i>Australia <div style="margin-left : 20px; float:right;">AUD</div></div>
-                <div class="item" data-value="br"><i class="br flag"></i>Brazil <div style="margin-left : 20px; float:right;">BRL</div></div>                
-                <div class="item" data-value="bg"><i class="bg flag"></i>Bulgaria <div style="margin-left : 20px; float:right;">BGN</div></div>                
-                <div class="item" data-value="ca"><i class="ca flag"></i>Canada<div style="margin-left : 20px; float:right;">CAD</div></div>
-                <div class="item" data-value="cn"><i class="cn flag"></i>China<div style="margin-left : 20px; float:right;">CNY</div></div>
-                <div class="item" data-value="hr"><i class="hr flag"></i>Croatia<div style="margin-left : 20px; float:right;">HRK</div></div>
-                <div class="item" data-value="cz"><i class="cz flag"></i>Czech Republic<div style="margin-left : 20px; float:right;">CZK</div></div>
-                <div class="item" data-value="dk"><i class="dk flag"></i>Denmark<div style="margin-left : 20px; float:right;">DKK</div></div>
-                <div class="item" data-value="gb"><i class="gb flag"></i>England<div style="margin-left : 20px; float:right;">GBP</div></div> 
-                <div class="item" data-value="hk"><i class="hk flag"></i>Hong Kong<div style="margin-left : 20px; float:right;">HKD</div></div>
-                <div class="item" data-value="hu"><i class="hu flag"></i>Hungary<div style="margin-left : 20px; float:right;">HUF</div></div>
-                <div class="item" data-value="is"><i class="is flag"></i>Iceland<div style="margin-left : 20px; float:right;">ISK</div></div>
-                <div class="item" data-value="in"><i class="in flag"></i>India<div style="margin-left : 20px; float:right;">INR</div></div>
-                <div class="item" data-value="id"><i class="id flag"></i>Indonesia<div style="margin-left : 20px; float:right;">IDR</div></div>
-                <div class="item" data-value="il"><i class="il flag"></i>Israel<div style="margin-left : 20px; float:right;">ILS</div></div>
-                <div class="item" data-value="jp"><i class="jp flag"></i>Japan<div style="margin-left : 20px; float:right;">JPY</div></div>
-                <div class="item" data-value="my"><i class="my flag"></i>Malaysia<div style="margin-left : 20px; float:right;">MYR</div></div>
-                <div class="item" data-value="mx"><i class="mx flag"></i>Mexico<div style="margin-left : 20px; float:right;">MXN</div></div>  
-                <div class="item" data-value="nz"><i class="nz flag"></i>New Zealand<div style="margin-left : 20px; float:right;">NZD</div></div>
-                <div class="item" data-value="no"><i class="no flag"></i>Norway<div style="margin-left : 20px; float:right;">NOK</div></div>
-                <div class="item" data-value="ph"><i class="ph flag"></i>Philippines<div style="margin-left : 20px; float:right;">PHP</div></div>
-                <div class="item" data-value="pl"><i class="pl flag"></i>Poland<div style="margin-left : 20px; float:right;">PLN</div></div>
-                <div class="item" data-value="ro"><i class="ro flag"></i>Romania<div style="margin-left : 20px; float:right;">RON</div></div>
-                <div class="item" data-value="ru"><i class="ru flag"></i>Russia<div style="margin-left : 20px; float:right;">RUB</div></div>
-                <div class="item" data-value="sg"><i class="sg flag"></i>Singapore<div style="margin-left : 20px; float:right;">SGD</div></div>
-                <div class="item" data-value="za"><i class="za flag"></i>South Africa<div style="margin-left : 20px; float:right;">ZAR</div></div>
-                <div class="item" data-value="kr"><i class="kr flag"></i>South Korea<div style="margin-left : 20px; float:right;">KRW</div></div>
-                <div class="item" data-value="se"><i class="se flag"></i>Sweden<div style="margin-left : 20px; float:right;">SEK</div></div>
-                <div class="item" data-value="ch"><i class="ch flag"></i>Switzerland <div style="margin-left : 20px; float:right;">CHF</div></div>               
-                <div class="item" data-value="th"><i class="th flag"></i>Thailand<div style="margin-left : 20px; float:right;">THB</div></div>               
-                <div class="item" data-value="tr"><i class="tr flag"></i>Turkey<div style="margin-left : 20px; float:right;">TRY</div></div>              
-                <div class="item" data-value="us"><i class="us flag"></i>United States<div style="margin-left : 20px; float:right;">USD</div></div>
+                <div class="item country currencySelected" data-value="au"><i class="au flag"></i><span><b>&dollar; </b></span>Australia <div style="margin-left : 20px; float:right;">AUD</div></div>
+                <div class="item country" data-value="br"><i class="br flag"></i></i><span><b>&#36; </b></span>Brazil <div style="margin-left : 20px; float:right;">BRL</div></div>                               
+                <div class="item country" data-value="ca"><i class="ca flag"></i></i><span><b>&dollar; </b></span>Canada<div style="margin-left : 20px; float:right;">CAD</div></div>
+                <div class="item country" data-value="cn"><i class="cn flag"></i><span><b>&#20803; </b></span>China<div style="margin-left : 20px; float:right;">CNY</div></div>
+                <div class="item country" data-value="hr"><i class="hr flag"></i><span><b>&#107;&#110; </b></span>Croatia<div style="margin-left : 20px; float:right;">HRK</div></div>
+                <div class="item country" data-value="cz"><i class="cz flag"></i><span><b>&#75;&#269; </b></span>Czech Republic<div style="margin-left : 20px; float:right;">CZK</div></div>
+                <div class="item country" data-value="dk"><i class="dk flag"></i><span><b>&#107;&#114; </b></span>Denmark<div style="margin-left : 20px; float:right;">DKK</div></div>
+                <div class="item country" data-value="gb"><i class="gb flag"></i><span><b>&pound;</b> </span>England<div style="margin-left : 20px; float:right;">GBP</div></div> 
+                <div class="item country" data-value="hk"><i class="hk flag"></i><span><b>&#36; </b></span>Hong Kong<div style="margin-left : 20px; float:right;">HKD</div></div>
+                <div class="item country" data-value="hu"><i class="hu flag"></i><span><b>&#70;&#116; </b></span>Hungary<div style="margin-left : 20px; float:right;">HUF</div></div>
+                <div class="item country" data-value="is"><i class="is flag"></i><span><b>&#107;&#114; </b></span>Iceland<div style="margin-left : 20px; float:right;">ISK</div></div>
+                <div class="item country" data-value="in"><i class="in flag"></i><span><b>&#8377; </b></span>India<div style="margin-left : 20px; float:right;">INR</div></div>
+                <div class="item country" data-value="id"><i class="id flag"></i><span><b>&#82;&#112; </b></span>Indonesia<div style="margin-left : 20px; float:right;">IDR</div></div>
+                <div class="item country" data-value="il"><i class="il flag"></i><span><b>&#8362; </b></span>Israel<div style="margin-left : 20px; float:right;">ILS</div></div>
+                <div class="item country" data-value="jp"><i class="jp flag"></i><span>&#165; </span>Japan<div style="margin-left : 20px; float:right;">JPY</div></div>
+                <div class="item country" data-value="my"><i class="my flag"></i><span><b>&#82;&#77; </b></span>Malaysia<div style="margin-left : 20px; float:right;">MYR</div></div>
+                <div class="item country" data-value="mx"><i class="mx flag"></i><span><b>&#36; </b></span>Mexico<div style="margin-left : 20px; float:right;">MXN</div></div>  
+                <div class="item country" data-value="nz"><i class="nz flag"></i><span><b>&dollar; </b></span>New Zealand<div style="margin-left : 20px; float:right;">NZD</div></div>
+                <div class="item country" data-value="no"><i class="no flag"></i><span><b>&#107;&#114; </b></span>Norway<div style="margin-left : 20px; float:right;">NOK</div></div>
+                <div class="item country" data-value="ph"><i class="ph flag"></i><span><b>&#8369; </b></span>Philippines<div style="margin-left : 20px; float:right;">PHP</div></div>
+                <div class="item country" data-value="pl"><i class="pl flag"></i><span><b>&#122;&#322; </b></span>Poland<div style="margin-left : 20px; float:right;">PLN</div></div>
+                <div class="item country" data-value="ro"><i class="ro flag"></i><span><b>&#108;&#101;&#105; </b></span>Romania<div style="margin-left : 20px; float:right;">RON</div></div>
+                <div class="item country" data-value="ru"><i class="ru flag"></i><span><b>&#1088;&#1091;&#1073; </b></span>Russia<div style="margin-left : 20px; float:right;">RUB</div></div>
+                <div class="item country" data-value="sg"><i class="sg flag"></i><span><b>&#36; </b></span>Singapore<div style="margin-left : 20px; float:right;">SGD</div></div>
+                <div class="item country" data-value="za"><i class="za flag"></i><span><b>&#82; </b></span>South Africa<div style="margin-left : 20px; float:right;">ZAR</div></div>
+                <div class="item country" data-value="kr"><i class="kr flag"></i><span><b>&#8361; </b></span>South Korea<div style="margin-left : 20px; float:right;">KRW</div></div>
+                <div class="item country" data-value="se"><i class="se flag"></i><span><b>&#107;&#114; </b></span>Sweden<div style="margin-left : 20px; float:right;">SEK</div></div>
+                <div class="item country" data-value="ch"><i class="ch flag"></i><span><b>&#67;&#72;&#70; </b></span>Switzerland <div style="margin-left : 20px; float:right;">CHF</div></div>               
+                <div class="item country" data-value="th"><i class="th flag"></i><span><b>&#3647; </b></span>Thailand<div style="margin-left : 20px; float:right;">THB</div></div>               
+                <div class="item country" data-value="tr"><i class="tr flag"></i><span><b>&#8378; </b></span>Turkey<div style="margin-left : 20px; float:right;">TRY</div></div>              
+                <div class="item country" data-value="us"><i class="us flag"></i><span>&dollar; </span>United States<div style="margin-left : 20px; float:right;">USD</div></div>
                 </div>
+             
                </div>
             </div>
+       
 
                   <!--Row 1 Column 2 dropdown-->
               <div class="eight wide column">
-                 <div class="ui search selection dropdown">
-                   <input type="hidden" name="country2">
+                 <div id="countryTwo" class="ui search selection dropdown">
+                   <input class="currencyVal" type="hidden" name="country2">
                    <i class="dropdown icon"></i>
                    <div class="default text">Select Country</div>
                    <div class="menu">
-                    <div class="item" data-value="au"><i class="au flag"></i>Australia <div style="margin-left : 20px; float:right;">AUD</div></div>
-                <div class="item" data-value="br"><i class="br flag"></i>Brazil <div style="margin-left : 20px; float:right;">BRL</div></div>                
-                <div class="item" data-value="bg"><i class="bg flag"></i>Bulgaria <div style="margin-left : 20px; float:right;">BGN</div></div>                
-                <div class="item" data-value="ca"><i class="ca flag"></i>Canada<div style="margin-left : 20px; float:right;">CAD</div></div>
-                <div class="item" data-value="cn"><i class="cn flag"></i>China<div style="margin-left : 20px; float:right;">CNY</div></div>
-                <div class="item" data-value="hr"><i class="hr flag"></i>Croatia<div style="margin-left : 20px; float:right;">HRK</div></div>
-                <div class="item" data-value="cz"><i class="cz flag"></i>Czech Republic<div style="margin-left : 20px; float:right;">CZK</div></div>
-                <div class="item" data-value="dk"><i class="dk flag"></i>Denmark<div style="margin-left : 20px; float:right;">DKK</div></div>
-                <div class="item" data-value="gb"><i class="gb flag"></i>England<div style="margin-left : 20px; float:right;">GBP</div></div> 
-                <div class="item" data-value="hk"><i class="hk flag"></i>Hong Kong<div style="margin-left : 20px; float:right;">HKD</div></div>
-                <div class="item" data-value="hu"><i class="hu flag"></i>Hungary<div style="margin-left : 20px; float:right;">HUF</div></div>
-                <div class="item" data-value="is"><i class="is flag"></i>Iceland<div style="margin-left : 20px; float:right;">ISK</div></div>
-                <div class="item" data-value="in"><i class="in flag"></i>India<div style="margin-left : 20px; float:right;">INR</div></div>
-                <div class="item" data-value="id"><i class="id flag"></i>Indonesia<div style="margin-left : 20px; float:right;">IDR</div></div>
-                <div class="item" data-value="il"><i class="il flag"></i>Israel<div style="margin-left : 20px; float:right;">ILS</div></div>
-                <div class="item" data-value="jp"><i class="jp flag"></i>Japan<div style="margin-left : 20px; float:right;">JPY</div></div>
-                <div class="item" data-value="my"><i class="my flag"></i>Malaysia<div style="margin-left : 20px; float:right;">MYR</div></div>
-                <div class="item" data-value="mx"><i class="mx flag"></i>Mexico<div style="margin-left : 20px; float:right;">MXN</div></div>  
-                <div class="item" data-value="nz"><i class="nz flag"></i>New Zealand<div style="margin-left : 20px; float:right;">NZD</div></div>
-                <div class="item" data-value="no"><i class="no flag"></i>Norway<div style="margin-left : 20px; float:right;">NOK</div></div>
-                <div class="item" data-value="ph"><i class="ph flag"></i>Philippines<div style="margin-left : 20px; float:right;">PHP</div></div>
-                <div class="item" data-value="pl"><i class="pl flag"></i>Poland<div style="margin-left : 20px; float:right;">PLN</div></div>
-                <div class="item" data-value="ro"><i class="ro flag"></i>Romania<div style="margin-left : 20px; float:right;">RON</div></div>
-                <div class="item" data-value="ru"><i class="ru flag"></i>Russia<div style="margin-left : 20px; float:right;">RUB</div></div>
-                <div class="item" data-value="sg"><i class="sg flag"></i>Singapore<div style="margin-left : 20px; float:right;">SGD</div></div>
-                <div class="item" data-value="za"><i class="za flag"></i>South Africa<div style="margin-left : 20px; float:right;">ZAR</div></div>
-                <div class="item" data-value="kr"><i class="kr flag"></i>South Korea<div style="margin-left : 20px; float:right;">KRW</div></div>
-                <div class="item" data-value="se"><i class="se flag"></i>Sweden<div style="margin-left : 20px; float:right;">SEK</div></div>
-                <div class="item" data-value="ch"><i class="ch flag"></i>Switzerland <div style="margin-left : 20px; float:right;">CHF</div></div>               
-                <div class="item" data-value="th"><i class="th flag"></i>Thailand<div style="margin-left : 20px; float:right;">THB</div></div>               
-                <div class="item" data-value="tr"><i class="tr flag"></i>Turkey<div style="margin-left : 20px; float:right;">TRY</div></div>              
-                <div class="item" data-value="us"><i class="us flag"></i>United States<div style="margin-left : 20px; float:right;">USD</div></div>
+                    <div class="item country" data-value="au"><i class="au flag"></i><span><b>&dollar; </b></span>Australia <div style="margin-left : 20px; float:right;">AUD</div></div>
+                <div class="item country" data-value="br"><i class="br flag"></i><span><b>&#36; </b></span>Brazil <div style="margin-left : 20px; float:right;">BRL</div></div>                               
+                <div class="item country" data-value="ca"><i class="ca flag"></i><span><b>&dollar; </b></span>Canada<div style="margin-left : 20px; float:right;">CAD</div></div>
+                <div class="item country" data-value="cn"><i class="cn flag"></i><span><b>&#20803; </b></span>China<div style="margin-left : 20px; float:right;">CNY</div></div>
+                <div class="item country" data-value="hr"><i class="hr flag"></i><span><b>&#107;&#110; </b></span>Croatia<div style="margin-left : 20px; float:right;">HRK</div></div>
+                <div class="item country" data-value="cz"><i class="cz flag"></i><span><b>&#75;&#269; </b></span>Czech Republic<div style="margin-left : 20px; float:right;">CZK</div></div>
+                <div class="item country" data-value="dk"><i class="dk flag"></i><span><b>&#107;&#114; </b></span>Denmark<div style="margin-left : 20px; float:right;">DKK</div></div>
+                <div class="item country" data-value="gb"><i class="gb flag"></i><span><b>&pound;</b> </span>England<div style="margin-left : 20px; float:right;">GBP</div></div> 
+                <div class="item country" data-value="hk"><i class="hk flag"></i><span><b>&#36; </b></span>Hong Kong<div style="margin-left : 20px; float:right;">HKD</div></div>
+                <div class="item country" data-value="hu"><i class="hu flag"></i><span><b>&#70;&#116; </b></span>Hungary<div style="margin-left : 20px; float:right;">HUF</div></div>
+                <div class="item country" data-value="is"><i class="is flag"></i><span><b>&#107;&#114; </b></span>Iceland<div style="margin-left : 20px; float:right;">ISK</div></div>
+                <div class="item country" data-value="in"><i class="in flag"></i><span><b>&#8377; </b></span>India<div style="margin-left : 20px; float:right;">INR</div></div>
+                <div class="item country" data-value="id"><i class="id flag"></i><span><b>&#82;&#112; </b></span>Indonesia<div style="margin-left : 20px; float:right;">IDR</div></div>
+                <div class="item country" data-value="il"><i class="il flag"></i><span><b>&#8362; </b></span>Israel<div style="margin-left : 20px; float:right;">ILS</div></div>
+                <div class="item country" data-value="jp"><i class="jp flag"></i><span>&#165; </span>Japan<div style="margin-left : 20px; float:right;">JPY</div></div>
+                <div class="item country" data-value="my"><i class="my flag"></i><span><b>&#82;&#77; </b></span>Malaysia<div style="margin-left : 20px; float:right;">MYR</div></div>
+                <div class="item country" data-value="mx"><i class="mx flag"></i><span><b>&#36; </b></span>Mexico<div style="margin-left : 20px; float:right;">MXN</div></div>  
+                <div class="item country" data-value="nz"><i class="nz flag"></i><span><b>&dollar; </b></span>New Zealand<div style="margin-left : 20px; float:right;">NZD</div></div>
+                <div class="item country" data-value="no"><i class="no flag"></i><span><b>&#107;&#114; </b></span>Norway<div style="margin-left : 20px; float:right;">NOK</div></div>
+                <div class="item country" data-value="ph"><i class="ph flag"></i><span><b>&#8369; </b></span>Philippines<div style="margin-left : 20px; float:right;">PHP</div></div>
+                <div class="item country" data-value="pl"><i class="pl flag"></i><span><b>&#122;&#322; </b></span>Poland<div style="margin-left : 20px; float:right;">PLN</div></div>
+                <div class="item country" data-value="ro"><i class="ro flag"></i><span><b>&#108;&#101;&#105; </b></span>Romania<div style="margin-left : 20px; float:right;">RON</div></div>
+                <div class="item country" data-value="ru"><i class="ru flag"></i><span><b>&#1088;&#1091;&#1073; </b></span>Russia<div style="margin-left : 20px; float:right;">RUB</div></div>
+                <div class="item country" data-value="sg"><i class="sg flag"></i><span><b>&#36; </b></span>Singapore<div style="margin-left : 20px; float:right;">SGD</div></div>
+                <div class="item country" data-value="za"><i class="za flag"></i><span><b>&#82; </b></span>South Africa<div style="margin-left : 20px; float:right;">ZAR</div></div>
+                <div class="item country" data-value="kr"><i class="kr flag"></i><span><b>&#8361; </b></span>South Korea<div style="margin-left : 20px; float:right;">KRW</div></div>
+                <div class="item country" data-value="se"><i class="se flag"></i><span><b>&#107;&#114; </b></span>Sweden<div style="margin-left : 20px; float:right;">SEK</div></div>
+                <div class="item country" data-value="ch"><i class="ch flag"></i><span><b>&#67;&#72;&#70; </b></span>Switzerland <div style="margin-left : 20px; float:right;">CHF</div></div>               
+                <div class="item country" data-value="th"><i class="th flag"></i><span><b>&#3647; </b></span>Thailand<div style="margin-left : 20px; float:right;">THB</div></div>               
+                <div class="item country" data-value="tr"><i class="tr flag"></i><span><b>&#8378; </b></span>Turkey<div style="margin-left : 20px; float:right;">TRY</div></div>              
+                <div class="item country" data-value="us"><i class="us flag"></i><span>&dollar; </span>United States<div style="margin-left : 20px; float:right;">USD</div></div>
                    </div>
                   </div>
              </div>
@@ -224,8 +204,6 @@
 		    <div class="row">
             <!--Row 2 column 1-->
             <div class="eight wide column">
-              <p class="exchangeRate box"> Exchange Rate: </p>
-              <p  class="rate1"> </p><br>
             </div>
 
              <!--Row 2 column 1-->
@@ -248,18 +226,18 @@
             <!--Row 2-->
            <div class="row">
             <!--Row 2 column 1-->
-            <div class="eight wide center aligned column currencyInput">
+            <div class="eight wide center aligned column currencyInput" style="margin-top: 30px;">
               <p>CURRENCY I HAVE: </p>
-              <div class="ui input">
-                <input type="text" placeholder="" name="amount1">
+              <div class="ui huge input">
+                <input type="text" placeholder="your amount..." name="amount1">
               </div>
             </div>
 
              <!--Row 2 column 1-->
-             <div class="eight center aligned wide column currencyInput">
-              <p>CURRENCY I NEED:</p>
-              <div class="ui input">
-                <input type="text" placeholder="" name="amount2">
+             <div class="eight center aligned wide column currencyInput" style="margin-top: 30px;">
+              <p class="currencyIWTitle">CURRENCY I NEED:</p>
+              <div class="ui huge input">
+                <input type="text" placeholder="amount you want..." name="amount2">
               </div>
             </div>
            </div>
@@ -284,50 +262,129 @@
 
       <section class="weatherBackground"> 
         <div id="weather" class="ui centered grid">
-            <div id="weather-section" class="ui container" style="margin-top:100px;">
+            <div id="weather-section" class="ui container" style="margin-top:50px; height:auto;">
               <div>
-                <h1 class="ui center aligned header weather">Weather Dashboard</h1>
+                <h1 class="ui center aligned header weather weatherTitle">Weather Dashboard</h1>
               </div>
               
               <div class="ui icon huge input">
-                <input id="cityname" type="text" placeholder="City Name...">
+                <input id="cityname" type="text" placeholder="City Name..." style="height: 38px">
                 <button id="searchBtn" type="submit" class="searchButton">
                   <i class="fa fa-search"></i>
                </button>
               </div>
-              <div class="ui two column grid center aligned">
-                <div class="row" style="margin-top:60px;">
-                  <div class="column">
-                    <div class="ui segment">
-                      <div class="ui center aligned icon header">
-                        <div><img src="" id="mainIcon"></div>
-                        <h2 class="location"></h2>
-                        
-                        <span class="ui header current-date" id="currentDay"></span>
-                        <h3 class="description"></h3>
-                      </div>
-                      <p class="temp"></p>
-                      <p><b>Humidty:</b>
-                        <span class="humidityNr">--</span>
-                        <p><b>Wind Speed:</b>
-                          <span class="windValue">--</span>
-                      
-                    </div>
-                  </div>
+              <br>
+              <br>
+              <br>
+    
+              <h1 class="location"></h1>
+              <br>
+              <br>
+              
+              <div class="ui four column grid">
+                <div class="two column row">
+                  <div class="column"></div>
+                </div>
+                <div class="column"></div>
+                <div class="column"></div>
+                <div class="column"></div>
+                <div class="column"></div>
+              </div>
+              
+            
+          <div class="ui one column doubling grid center aligned container weatherCCard" style="margin-bottom: 60px;">
+            
+            <div class="column">
+
+
+              <div class="ui four column grid">
+                <div class="two column row">
+          <div class="ui link cards">
+            <div class="card" style="margin:40px;">
+              <h2 id="currentDay"></h2>
+              <div class="image">
+                <img src="assets/images/sea-img-01.png">
+              </div>
+              <div class="content">
+                <div class="header temp"></div>
+                <div class="meta">
+                  <a>Cloudy</a>
+                </div>
+                <div><img class="weatherInfo" src="" id="mainIcon"></div>
+              </div>
+              <div class="extra content">
+                <span class="right floated">
                   
-              
+                </span>
+                <span>
+                  Humidity: <span class="humidityNr"></span>
+                </span>
+              </div>
+            
             </div>
-      
+            <div class="card" style="margin:40px;">
+              <h2 class="dateSize" id="Date1"></h2>
+              <div class="image">
+                <img src="assets/images/greece-01.png">
+              </div>
+              <div class="content">
+                <div class="header tempSize" id="tempDay1"></div>
+                <div class="meta">
+                  <a>Cloudy</a>
+                </div>
+                <div><img src="" class="day1icon icon"/></div>
+              </div>
+              <div class="extra content">
+                <span class="right floated">
+                
+                </span>
+                <span>
+                  Humidity: <span id="humidityDay1"></span>
+                </span>
+              </div>
+            
+            </div>
+
+            <div class="card" style="margin:40px;">
+              <h2 class="dateSize" id="Date2"></h2>
+              <div class="image">
+                <img src="assets/images/travel-img-01.png">
+              </div>
+              <div class="content">
+                <div class="header tempSize" id="tempDay2"></div>
+                <div class="meta">
+                  <a>Cloudy</a>
+                </div>
+                <div><img src="" class="day2icon icon"/></div>
+              </div>
+              <div class="extra content">
+                <span class="right floated">
+                
+                </span>
+                <span>
+                  Humidity: <span id="humidityDay2"></span>
+                </span>
+              </div>
+            
+            </div>
            
-                 
-              
             </div>
             </div>
-          </section>
-
-     
-
           
+          
+              
+              
+
+        </section>
+
+
+
+        <script src="assets/library/jquery.min.js"></script>
+        <script src="assets/dist/components/dropdown.js"></script>
+        <script src="assets/dist/components/transition.js"></script>
+        <script src="assets/dist/components/sidebar.js"></script>
+        <script src="assets/dist/components/sidebar.min.js"></script>
+        <script src="assets/dist/components/search.js"></script>
         <!--J-Query cdn reference popper-->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <!--Semantic UI css framework-->
@@ -336,6 +393,6 @@
     <!-- Moment.js-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.25.1/moment.min.js"></script>
     <!-- reference js scripts here -->
-    <script src="/Users/sumayahassan/Desktop/hi/exchange-away/style/script.js", defer></script>
+    <script type="text/javascript" src="script.js"></script>
 </body>
 </html>

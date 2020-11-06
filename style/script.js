@@ -8,9 +8,10 @@ $("#currentDayForCurrency").text(moment().format("dddd do YYYY"));
 
 
 $("#searchBtn").click(function(event) {
-       console.log('button clicked')
+       console.log('button ccclicked')
        getWeather ();
        getFiveDayForcast ();
+       saveToStorage();
    });
 
 
@@ -21,11 +22,31 @@ $("#searchBtn").click(function(event) {
        let queryURL = `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=73b47f542215050a64d2b287364ee1d1`;
        console.log('weather infor', queryURL);
        
-       let cities = [];
-       cities.push(cityName);
-       let cityList = JSON.stringify(cities);
-       localStorage.setItem( "search-cities" , cityList);
-   
+       // let cities = [];
+       //    cities.push(cityName);
+       //    //console.log('my cities', cities);
+
+       //    let existingCities = JSON.parse(localStorage.getItem("new-cities"));
+       //    //console.log("previously search", existingCities);
+       //    let concatCities = cities.concat(existingCities);
+       //    console.log("new cities", concatCities);
+
+       //    let cityList = JSON.stringify(concatCities);
+       //    console.log("hiya", cityList);
+
+       //    localStorage.setItem("new-cities", cityList);
+       //        cities.push(cityName);
+       //        //get item takes one argument
+       //       let existingList = JSON.parse(localStorage.getItem("new-cities"));
+       //       let concatCities = cities.concat(existingList);
+       //       console.log("new city", concatCities);
+       //        let cityList = JSON.stringify(concatCities);
+       //      /// set item takes on two arguments
+       //        localStorage.setItem( "new-cities" , cityList);
+
+       localStorage.clear;
+
+
        let KELVIN = 273.15;
       
        $.ajax ({
@@ -89,4 +110,21 @@ $("#searchBtn").click(function(event) {
               $('#tempDay2').text(Celsius + " \u00B0C");
               $('#humidityDay2').text(resultForcast.list[2].main.humidity + " %");
               $('#Date2').text(moment().add(2, 'day').format("DD/M/YYYY"))
+          }
+          })
+       }
 
+       function saveToStorage(){
+              let citySavedNames = $("#cityname").val();
+        
+              let cities;
+              if(localStorage.getItem('T-Cities') === null){
+                cities = [];
+              }else{
+                cities = JSON.parse(localStorage.getItem('T-Cities'))
+              }
+              cities.push(citySavedNames);
+              localStorage.setItem('T-Cities', JSON.stringify(cities));
+            }
+        
+            

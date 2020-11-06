@@ -1,17 +1,11 @@
-# Exchange-Away
-
-#API's
-https://openweathermap.org/current
-https://exchangeratesapi.io/
-http://fixer.io/
-https://currencylayer.com/documentation
 
 
-#css
-https://semantic-ui.com/collections/menu.html
+
+
 
 ## Group 1:
 Rekha Kumari. Nikstar-1
+
 Sumaya Hassan. Sumaya198
 
 ## Project Title: 
@@ -20,7 +14,7 @@ Exchange Away (EX Away – The best way to exchange).
 ## Website Title and Description
 Exchange-Away website will give you the best way to exchange your money, and save your valuable time when you travel. This is the core functionality we are offering. However, we are integrating this feature with the weather forecast as an extra feature made available to our prospective users to enable them get first hand up-to date weather information to where they are visiting.
 
-The website can be found at the following address ...
+The website can be found at the following address ...https://nikstar-1.github.io/exchange-away/.
 ## Who is our audience? 
 
 Tourists. But can be used by other people (business / holiday makers etc).
@@ -38,13 +32,21 @@ Quickly, and effectively by giving the user direct access to a handy tool allowi
 
 ## Acceptance Criteria:
 GIVEN a currency with form inputs.
+
 WHEN I select my currency from dropdown.
+
 WHEN I select the currency I want to convert to.
+
 WHEN I enter the amount of money I have to convert.
+
 THEN I am presented with local currency rates for that country.
+
 THEN I am presented with the equivalent amount I will be getting based on exchange rate.
+
 WHEN I select the rates, I am able to store my search in the local history to refer back to.
+
 THEN I scroll down, and input the city to where I'm travelling.
+
 THEN I am presented with the weather forecast for that country. 
 
 ## Motivation
@@ -81,6 +83,17 @@ Live currency board
 Live Weather Board
 
 
+### Exchange-Away
+
+#API's
+https://openweathermap.org/current
+https://exchangeratesapi.io/
+http://fixer.io/
+https://currencylayer.com/documentation
+
+
+#css
+https://semantic-ui.com/collections/menu.html
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
